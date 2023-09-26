@@ -49,8 +49,8 @@ export function LoginCard() {
           </Button>
         </Link>
         <div>
-          <p className="px-8 mt-2 text-sm text-right text-muted-foreground">
-            verify a certificate?{" "}
+          <p className="px-8 text-sm text-right text-muted-foreground">
+            verify a document?{" "}
             <Link href="/verify">
               <Button
                 variant="link"
