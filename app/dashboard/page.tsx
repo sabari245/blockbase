@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 export default function Page() {
     return (
         <main className="flex flex-grow min-h-screen flex-col">
@@ -5,6 +8,17 @@ export default function Page() {
                 <h1 className="font-bold mb-8">Blockchain-Powered Legal Document Storage: A Paradigm Shift in Case Management</h1>
                 <h2 className="font-bold mb-4">Introduction</h2>
                 <p className="mb-8">In the ever-evolving legal landscape, the efficient management of legal documents is crucial. Traditionally, the storage and retrieval of legal documents have been plagued by inefficiencies, data breaches, and the need for intermediaries. Enter blockchain technology – a decentralized and tamper-proof ledger that is transforming the way legal documents are stored, accessed, and managed.</p>
+
+                <AspectRatio ratio={16 / 9} className="bg-muted">
+                    <Image
+                        src="/images/main-flow.png"
+                        alt="flow of the image"
+                        fill
+                        className="rounded-md object-cover"
+                        quality={10}
+                    />
+                </AspectRatio>
+
                 <h2 className="font-bold mb-4">The Blockchain Advantage</h2>
                 <p className="mb-8">Blockchain offers several key advantages that make it an ideal solution for storing legal documents:</p>
                 <ul>
@@ -43,7 +57,21 @@ export default function Page() {
 
                 <h2 className="font-bold mb-4">On-Chain and Off-Chain Data Storage</h2>
                 {/* Add an image here */}
-                <p className="mb-8">The blockchain primarily stores metadata, such as document hashes, access control rules, and transaction history. This data is essential for verifying the authenticity and ownership of documents. The bulk of document content is stored off-chain on decentralized storage. This approach reduces the strain on the blockchain network while maintaining document availability.</p>
+                <p className="mb-4">The blockchain primarily stores metadata, such as document hashes, access control rules, and transaction history. This data is essential for verifying the authenticity and ownership of documents. The bulk of document content is stored off-chain on decentralized storage. This approach reduces the strain on the blockchain network while maintaining document availability.</p>
+
+                <h2 className="font-bold mb-4">Signature-Based Verification of Documents</h2>
+                {/* <p className="mb-8">The system's architecture relies on a distributed ledger, such as Ethereum or a private consortium blockchain for enhanced control. Here's a breakdown of the technology stack:</p> */}
+                {/* Add an image here */}
+                <ol>
+                    <li className="mb-4">Document Signing: When a user uploads a legal document, they digitally sign it using their private key. This generates a unique digital signature for the document.</li>
+                    <li className="mb-4">Verification Process: To verify a document's authenticity, the system retrieves the document, its associated hash, and the user's public key from the blockchain.</li>
+                    <li className="mb-4">Signature Verification: The stored public key is used to verify the digital signature against the document's content. If the signature matches, the document is considered valid and unaltered.</li>
+                    <li className="mb-4">Access Control: The system checks the user's access permissions recorded on the blockchain. If the user has the necessary rights, they can access and download the document.</li>
+                </ol>
+
+                <p className="mb-4">
+                    In conclusion, the use of blockchain technology in legal document storage offers a robust, secure, and transparent solution. By combining on-chain metadata, off-chain decentralized storage, and digital signature-based verification, this system ensures the integrity and authenticity of legal documents while improving overall case management efficiency. Your expertise in web development and smart contracts makes you well-suited to design and implement such a system effectively. Embracing blockchain in the legal sector is not a matter of if, but when.
+                </p>
 
             </div>
 
