@@ -1,55 +1,65 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 
-export type File = {
+export type Case = {
     id: string;
-    title: string;
-    url: string;
-    status: "signed" | "unsigned" | "invalid";
+    caseNumber: string;
+    caseType: string;
+    incidentDate: string;
+    location: string;
+    description: string;
+    caseFile: string[];
 }
 
-export const fileTableColumns: ColumnDef<File>[] = [
+export const caseTableColumns: ColumnDef<Case>[] = [
     {
         accessorKey: "id",
-        header: "Id",
+        header: "S.No",
     },
     {
-        accessorKey: "title",
-        header: "Title",
+        accessorKey: "caseNumber",
+        header: "Case Number",
     },
     {
-        accessorKey: "url",
-        header: "Url",
+        accessorKey: "caseType",
+        header: "Case Type",
     },
     {
-        accessorKey: "status",
-        header: "Status",
+        accessorKey: "incidentDate",
+        header: "Incident Date",
+    },
+    {
+        accessorKey: "location",
+        header: "Location",
     },
 ]
 
-export const fileData: File[] = [
+export const caseData: Case[] = [
     {
-        id: "728ed52f",
-        title: "file1.pdf",
-        url: "https://example.com/file1.pdf",
-        status: "signed",
+        id: "1",
+        caseNumber: "12345",
+        caseType: "Type A",
+        incidentDate: "2023-09-27",
+        location: "Sample Location 1",
+        description: "This is a sample description 1.",
+        caseFile: ["file1.txt", "file2.txt"],
     },
     {
-        id: "489e1d42",
-        title: "file2.docx",
-        url: "https://example.com/file2.docx",
-        status: "unsigned",
+        id: "2",
+        caseNumber: "67890",
+        caseType: "Type B",
+        incidentDate: "2023-09-28",
+        location: "Sample Location 2",
+        description: "This is a sample description 2.",
+        caseFile: ["file3.txt"],
     },
     {
-        id: "3a7b9c1e",
-        title: "file3.jpg",
-        url: "https://example.com/file3.jpg",
-        status: "invalid",
-    },
-    {
-        id: "9f6d8e2c",
-        title: "file4.txt",
-        url: "https://example.com/file4.txt",
-        status: "unsigned",
+        id: "3",
+        caseNumber: "54321",
+        caseType: "Type C",
+        incidentDate: "2023-09-29",
+        location: "Sample Location 3",
+        description: "This is a sample description 3.",
+        caseFile: ["file4.txt"],
     },
 ]

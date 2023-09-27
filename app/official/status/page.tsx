@@ -1,19 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { fileData, fileTableColumns } from "./columns";
+import { caseData, caseTableColumns } from "./columns";
 import { FileTable } from "./data-table";
 import { FileUploadForm } from "./upload-form";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Plus } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export default function Page() {
     return (
         <main className="flex flex-grow min-h-screen flex-col">
             <Dialog>
                 <div className="flex justify-between items-center mb-6">
-                    <h3>Your Documents</h3>
-                    <DialogTrigger><Button><Plus size={20} /> Add Document</Button></DialogTrigger>
+                    <h3>Current Records</h3>
+                    <div className="flex w-full max-w-sm items-center space-x-2">
+                        <Input type="text" placeholder="Case Number" />
+                        <Button type="submit">Search</Button>
+                    </div>
                 </div>
-                <FileTable columns={fileTableColumns} data={fileData} />
+                <FileTable columns={caseTableColumns} data={caseData} />
 
                 {/* Dialog  */}
                 <DialogContent className="sm:max-w-[425px]">

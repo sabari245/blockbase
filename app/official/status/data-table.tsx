@@ -15,6 +15,10 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { caseData } from "./columns"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -27,7 +31,18 @@ export function FileTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
     const table = useReactTable({
         data,
-        columns,
+        columns: [
+            ...columns,
+            {
+                id: "actions",
+                header: "Actions",
+                cell: ({ row }) => (
+                    <Link href={"/official/status/" + caseData[row.index].caseNumber}>
+                        <Button variant="link">Details <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                    </Link>
+                )
+            }
+        ],
         getCoreRowModel: getCoreRowModel(),
     })
 
