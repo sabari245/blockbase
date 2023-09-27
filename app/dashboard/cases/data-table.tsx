@@ -37,7 +37,7 @@ export function FileTable<TData, TValue>({
                 id: "actions",
                 header: "Actions",
                 cell: ({ row }) => (
-                    <Link href={"/official/status/" + caseData[row.index].caseNumber}>
+                    <Link href={"/cases/status/" + caseData[row.index].caseNumber}>
                         <Button variant="link">Details <ArrowRight className="ml-2 h-4 w-4" /></Button>
                     </Link>
                 )
