@@ -42,7 +42,7 @@ export function LoginCard() {
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </Link>
-        <Link href="/govt" className="flex items-center w-full">
+        <Link href="/official" className="flex items-center w-full">
           <Button variant="outline" className="w-full">
             Official Login
             <ArrowRight className="w-4 h-4 ml-2" />
